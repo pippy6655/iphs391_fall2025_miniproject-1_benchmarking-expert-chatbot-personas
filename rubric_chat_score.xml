@@ -1,0 +1,64 @@
+<ScoringRubric name="score_chat" totalScore="100">
+  <Description>
+    Evaluates the quality of a chat transcript as a weighted sum of five factors. For each factor, assign a score of 0, 25, 50, 75, or 100 based on the provided levels. The final score_chat is the weighted sum of these scores.
+  </Description>
+
+  <Factor name="Resolution Quality" weight="0.35">
+    <Description>Measures the effectiveness and accuracy of the solution provided to the user's core issue.</Description>
+    <ScoringLevels>
+      <Level score="100">Full, accurate, and effective resolution achieved.</Level>
+      <Level score="75">Largely resolved with only minor omissions.</Level>
+      <Level score="50">Partial resolution; significant issues remain unresolved.</Level>
+      <Level score="25">Inaccurate information provided or solution failed.</Level>
+      <Level score="0">No resolution offered or attempted.</Level>
+    </ScoringLevels>
+  </Factor>
+
+  <Factor name="Interaction Efficiency" weight="0.20">
+    <Description>Assesses the timeliness and conciseness of the conversation, minimizing effort for all parties.</Description>
+    <ScoringLevels>
+      <Level score="100">Highly efficient, prompt, and focused with no wasted messages.</Level>
+      <Level score="75">Generally efficient with minor, acceptable delays.</Level>
+      <Level score="50">Prolonged due to noticeable delays or repetitive questions.</Level>
+      <Level score="25">Significantly inefficient with long waits and confusion.</Level>
+      <Level score="0">Extremely inefficient and frustratingly slow.</Level>
+    </ScoringLevels>
+  </Factor>
+
+  <Factor name="Communication & Tone" weight="0.25">
+    <Description>Evaluates the clarity, professionalism, grammar, and interpersonal tone of the agent.</Description>
+    <ScoringLevels>
+      <Level score="100">Crystal clear, professional, empathetic, and grammatically flawless.</Level>
+      <Level score="75">Clear and professional with minor, non-impactful errors.</Level>
+      <Level score="50">Understandable but contained several errors; tone was neutral.</Level>
+      <Level score="25">Difficult to understand; tone was unprofessional or impatient.</Level>
+      <Level score="0">Incomprehensible, unprofessional, or rude.</Level>
+    </ScoringLevels>
+  </Factor>
+
+  <Factor name="Process Adherence" weight="0.10">
+    <Description>Measures compliance with required company protocols, such as greetings, verification, and disclosures.</Description>
+    <ScoringLevels>
+      <Level score="100">Flawlessly followed all required procedures.</Level>
+      <Level score="75">Followed key procedures with only a minor deviation.</Level>
+      <Level score="50">Missed a significant procedural step.</Level>
+      <Level score="25">Missed multiple significant procedures or created a risk.</Level>
+      <Level score="0">Complete disregard for established processes.</Level>
+    </ScoringLevels>
+  </Factor>
+
+  <Factor name="Engagement & Rapport" weight="0.10">
+    <Description>Assesses the agent's ability to build a positive connection with the user through personalization and empathy.</Description>
+    <ScoringLevels>
+      <Level score="100">Actively built strong rapport and personalized the interaction.</Level>
+      <Level score="75">Made a good effort to build rapport and show empathy.</Level>
+      <Level score="50">Professional but impersonal; no attempt to build rapport.</Level>
+      <Level score="25">Responses were robotic and scripted, showing no engagement.</Level>
+      <Level score="0">Disengaged, creating a negative and disconnected experience.</Level>
+    </ScoringLevels>
+  </Factor>
+
+  <FinalCalculation>
+    score_chat = (ResolutionQuality * 0.35) + (InteractionEfficiency * 0.20) + (CommunicationAndTone * 0.25) + (ProcessAdherence * 0.10) + (EngagementAndRapport * 0.10)
+  </FinalCalculation>
+</ScoringRubric>
